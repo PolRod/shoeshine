@@ -1,0 +1,35 @@
+#shoeshine-overlay {
+  opacity:    0.95;
+  background: #000;
+  width:      100%;
+  height:     100%;
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+#shoeshine-hello {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+}
+
+#shoeshine-hello p {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  margin-bottom: 40%;
+  font-weight: bold;
+}
+
+#shoeshine-hello input {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 1.3em;
+}
