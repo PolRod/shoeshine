@@ -10,6 +10,10 @@
     "https://ajax.googleapis.com/"
   ],
 
+  "background": {
+    "page": "background/background.html"
+  },
+
   "content_scripts": [
     {
       "matches": ["*://www.amazon.com/*"],

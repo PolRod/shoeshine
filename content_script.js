@@ -1,5 +1,7 @@
-$(document).ready(function() {
-  var html = '<div id="shoeshine-hello"><p>WHAT ARE YOU BUYING TODAY?</p><input type="text"></div><div id="shoeshine-overlay"></div>';
+chrome.runtime.sendMessage({html: "initial"}, function(response) {
+  console.log('message sent');
+  console.log(response.html);
+  var html = response.html;
   $('body').prepend(html);
   $('#shoeshine-overlay').css('z-index', 1000);
   $('#shoeshine-hello').css('z-index', 1001);
