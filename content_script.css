@@ -9,15 +9,13 @@
   position:   fixed;
 }
 
-#shoeshine-hello {
+.shoeshine-slide {
   position: fixed;
-  top: 40%;
-  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 38px;
 }
 
-#shoeshine-hello p {
+.shoeshine-slide p {
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -26,10 +24,20 @@
   font-weight: bold;
 }
 
-#shoeshine-hello input {
+.shoeshine-slide input {
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
   height: 1.3em;
+}
+
+#shoeshine-hello {
+  top: 40%;
+  left: 50%;
+}
+
+#shoeshine-price {
+  top: 140%;
+  left: 50%;
 }
