@@ -10,37 +10,43 @@
 }
 
 .shoeshine-slide {
-  position: fixed;
-  transform: translate(-50%, -50%);
+  /*position: fixed;
+  transform: translate(-50%, -50%);*/
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  align-items: center;
+  width: 100vw;
   font-size: 38px;
 }
 
 #shoeshine-main p {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #FFF;
-  margin-bottom: 40%;
+  /*position: relative;*/
+  /*left: 50%;
+  transform: translate(-50%, -50%);*/
+  /*margin-bottom: 40%;*/
+  /*text-align: center;*/
+  height: 50%;
+  display: flex;
+  align-items: center;
   font-weight: bold;
   line-height: 100%;
-  text-align: center;
+  color: #FFF;
 }
 
 #shoeshine-main input {
-  position: relative;
+  /*position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 90%;*/
   height: 1.3em;
 }
 
 #shoeshine-hello {
-  top: 40%;
-  left: 50%;
+
 }
 
 #shoeshine-price {
   display: none;
-  top: 140%;
-  left: 50%;
 }

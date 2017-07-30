@@ -11,15 +11,15 @@ chrome.runtime.sendMessage({html: "initial"}, function(response) {
 
 function activateSlide(slideElement){
   $(slideElement).addClass('shoeshine-active');
-  $(slideElement).css('top', '140%');
+  $(slideElement).css('margin-top', '100vh');
   $(slideElement).show();
-  $(slideElement).animate({top: '40%'}, 100);
+  $(slideElement).animate({'margin-top': '0vh'}, 100);
   $(slideElement).find('input').focus();
 }
 
 function deActivateSlide(slideElement){
   $(slideElement).removeClass('shoeshine-active');
-  $(slideElement).animate({top: '-140%'}, 100);
+  $(slideElement).animate({'margin-top': '-100vh'}, 5000);
   $(slideElement).hide();
 }
 
