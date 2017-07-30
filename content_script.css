@@ -15,16 +15,18 @@
   font-size: 38px;
 }
 
-.shoeshine-slide p {
+#shoeshine-main p {
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #FFF;
   margin-bottom: 40%;
   font-weight: bold;
+  line-height: 100%;
+  text-align: center;
 }
 
-.shoeshine-slide input {
+#shoeshine-main input {
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -38,6 +40,7 @@
 }
 
 #shoeshine-price {
+  display: none;
   top: 140%;
   left: 50%;
 }
