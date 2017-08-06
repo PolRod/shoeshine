@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 #shoeshine-overlay {
   opacity:    0.95;
   background: #000;
