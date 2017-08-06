@@ -9,10 +9,15 @@
   position:   fixed;
 }
 
+#shoeshine-slideshow {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 .shoeshine-slide {
-  /*position: fixed;
-  transform: translate(-50%, -50%);*/
-  position: absolute;
+  position: relative;
   display: flex;
   flex-flow: column;
   height: 100vh;
@@ -22,11 +27,6 @@
 }
 
 #shoeshine-main p {
-  /*position: relative;*/
-  /*left: 50%;
-  transform: translate(-50%, -50%);*/
-  /*margin-bottom: 40%;*/
-  /*text-align: center;*/
   height: 50%;
   display: flex;
   align-items: center;
@@ -36,17 +36,13 @@
 }
 
 #shoeshine-main input {
-  /*position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;*/
   height: 1.3em;
 }
 
-#shoeshine-hello {
-
+.shoeshine-active {
+  display: flex;
 }
 
-#shoeshine-price {
+.shoeshine-slide:not(.shoeshine-active) {
   display: none;
 }

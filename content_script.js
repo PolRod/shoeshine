@@ -4,23 +4,27 @@ chrome.runtime.sendMessage({html: "initial"}, function(response) {
   var html = response.html;
   $('body').prepend(html);
   $('#shoeshine-overlay').css('z-index', 1000);
-  $('.shoeshine-slide').each(function(){
-    $(this).css('z-index', 1001);
-  });
+  $('#shoeshine-slideshow').css('z-index', 1001);
 });
 
+//The time it takes for the slide activation/deactivation animation to complete
+var SLIDE_ANIMATION_TIME = 120;
+
 function activateSlide(slideElement){
+  $(slideElement).css('top', '100vh');
   $(slideElement).addClass('shoeshine-active');
-  $(slideElement).css('margin-top', '100vh');
-  $(slideElement).show();
-  $(slideElement).animate({'margin-top': '0vh'}, 100);
-  $(slideElement).find('input').focus();
+  $(slideElement).animate({'top': '0vh'}, SLIDE_ANIMATION_TIME, function(){
+    $(slideElement).find('input').focus();
+  });
 }
 
-function deActivateSlide(slideElement){
-  $(slideElement).removeClass('shoeshine-active');
-  $(slideElement).animate({'margin-top': '-100vh'}, 5000);
-  $(slideElement).hide();
+//Deactivate one slide, then activate the other
+function switchActiveSlide(deActivateElement, activateElement){
+  $('#shoeshine-slideshow').find('input').focus();
+  $(deActivateElement).animate({'top': '-100vh'}, SLIDE_ANIMATION_TIME, function(){
+    $(deActivateElement).removeClass('shoeshine-active');
+    activateSlide(activateElement);
+  });
 }
 
 $(document).ready(function(){
@@ -29,8 +33,7 @@ $(document).ready(function(){
   $('.shoeshine-active input').keypress(function(e) {
     //If key pressed is enter key
     if (e.which == 13) {
-      deActivateSlide($('#shoeshine-hello'));
-      activateSlide($('#shoeshine-price'));
+      switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
     }
   });
 });
