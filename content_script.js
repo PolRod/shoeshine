@@ -1,13 +1,14 @@
+// The actual html is in a background page. Here we ask for the html to that page.
+// We also make some CSS adjustments that were not effective if executed
+// through content_script.css.
 chrome.runtime.sendMessage({html: "initial"}, function(response) {
-  console.log('message sent');
-  console.log(response.html);
   var html = response.html;
   $('body').prepend(html);
   $('#shoeshine-overlay').css('z-index', 1000);
   $('#shoeshine-slideshow').css('z-index', 1001);
 });
 
-//The time it takes for the slide activation/deactivation animation to complete
+// The time it takes for the slide activation/deactivation animation to complete
 var SLIDE_ANIMATION_TIME = 120;
 
 function activateSlide(slideElement){
@@ -18,7 +19,7 @@ function activateSlide(slideElement){
   });
 }
 
-//Deactivate one slide, then activate the other
+// Deactivate one slide, then activate the other
 function switchActiveSlide(deActivateElement, activateElement){
   $('#shoeshine-slideshow').find('input').focus();
   $(deActivateElement).animate({'top': '-100vh'}, SLIDE_ANIMATION_TIME, function(){
@@ -31,7 +32,7 @@ $(document).ready(function(){
   $('.shoeshine-active input').focus();
   // Going from hello page to price page
   $('.shoeshine-active input').keypress(function(e) {
-    //If key pressed is enter key
+    // If key pressed is enter key
     if (e.which == 13) {
       switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
     }

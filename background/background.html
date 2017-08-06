@@ -1,6 +1,8 @@
 <script src="background.js"></script>
 <body>
+  <!-- This is what is sent to the content script and injected in the page -->
   <div id="shoeshine-main">
+    <!-- Canvas containing all the slides -->
     <div id='shoeshine-slideshow'>
       <div id="shoeshine-hello" class='shoeshine-slide shoeshine-active'>
         <p>
@@ -16,6 +18,7 @@
         <input type="text">
       </div>
     </div>
+    <!-- The overlay with opacity adjustments -->
     <div id="shoeshine-overlay"></div>
   </div>
 </body>
