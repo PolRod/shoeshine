@@ -13,6 +13,10 @@ body {
   position:   fixed;
 }
 
+#shoeshine-main {
+  color: #FFF;
+}
+
 #shoeshine-slideshow {
   position: fixed;
   height: 100vh;
@@ -36,11 +40,30 @@ body {
   align-items: center;
   font-weight: bold;
   line-height: 100%;
-  color: #FFF;
 }
 
 #shoeshine-main input {
   height: 1.3em;
+}
+
+.choice-table {
+  display: flex;           display: -webkit-flex;
+  flex-direction: row;     -webkit-flex-direction: row;
+  flex-grow: 0;            -webkit-flex-grow: 0;
+  flex-wrap: wrap;         -webkit-flex-wrap: wrap;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.choice-table .choice-option {
+  width: 50%;
+}
+
+.choice-table .choice-option .choice-button {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .shoeshine-active {

@@ -31,10 +31,17 @@ function switchActiveSlide(deActivateElement, activateElement){
 $(document).ready(function(){
   $('.shoeshine-active input').focus();
   // Going from hello page to price page
-  $('.shoeshine-active input').keypress(function(e) {
+  $('#shoeshine-hello input').keypress(function(e) {
     // If key pressed is enter key
     if (e.which == 13) {
       switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
+    }
+  });
+
+  $('#shoeshine-price input').keypress(function(e) {
+    // If key pressed is enter key
+    if (e.which == 13) {
+      switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
     }
   });
 });
