@@ -29,6 +29,7 @@ function switchActiveSlide(deActivateElement, activateElement){
 }
 
 $(document).ready(function(){
+  $('body').addClass('shoeshine-stop');
   $('.shoeshine-active input').focus();
   // Going from hello page to price page
   $('#shoeshine-hello input').keypress(function(e) {
@@ -43,5 +44,11 @@ $(document).ready(function(){
     if (e.which == 13) {
       switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
     }
+  });
+
+  // Remove shoeshine experience and allow scrolling if person chooses to buy
+  $('.choice-continue a').click(function(){
+    $('body').removeClass('shoeshine-stop');
+    $('#shoeshine-main').remove();
   });
 });
