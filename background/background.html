@@ -5,26 +5,32 @@
     <!-- Canvas containing all the slides -->
     <div id='shoeshine-slideshow'>
       <div id="shoeshine-hello" class='shoeshine-slide shoeshine-active'>
-        <p>
+        <p class="title">
           WHAT ARE YOU BUYING TODAY?
         </p>
-        <input type="text">
+        <div class="shoeshine-entry">
+          <input type="text">
+          <p class="error">Enter the name of the product</p>
+        </div>
       </div>
 
       <div id="shoeshine-price" class='shoeshine-slide'>
-        <p>
+        <p class="title">
           HOW MUCH DO YOU EXPECT TO SPEND ON IT?
         </p>
-        <input type="text">
+        <div class="shoeshine-entry">
+          <input type="text">
+          <p class="error">Enter the price of the product</p>
+        </div>
       </div>
 
       <div id="shoeshine-choice" class='shoeshine-slide'>
-        <p>
+        <p class="title">
           CHOOSE WHAT YOU'LL DO
         </p>
         <div class="choice-table">
           <div class="choice-donate choice-cell">
-            <a><div class="choice-button">Do good</div></a>
+            <a><div class="choice-button">Make the world a better place</div></a>
           </div>
           <div class="choice-or choice-cell">
             <div>Or</div>

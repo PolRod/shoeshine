@@ -34,12 +34,18 @@ body.shoeshine-stop {
   font-size: 38px;
 }
 
-#shoeshine-main p {
+#shoeshine-main p.title {
   height: 50%;
   display: flex;
   align-items: center;
   font-weight: bold;
   line-height: 100%;
+}
+
+#shoeshine-main p.error {
+  font-size: 14px;
+  color: red;
+  display: none;
 }
 
 #shoeshine-main input {

@@ -28,6 +28,14 @@ function switchActiveSlide(deActivateElement, activateElement){
   });
 }
 
+function showInputError($input) {
+  $error = $($input).next('.error')
+  $error.stop().fadeIn(1);
+  setTimeout(function () {
+    $error.fadeOut(1800);
+  }, 1000);
+}
+
 $(document).ready(function(){
   var intendedPurchase = "";
   var intendedPurchasePrice = "";
@@ -37,17 +45,27 @@ $(document).ready(function(){
   $('#shoeshine-hello input').keypress(function(e) {
     // If key pressed is enter key
     if (e.which == 13) {
-      intendedPurchase = this.value;
-      switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
+      if (this.value.length > 0) {
+        intendedPurchase = this.value;
+        switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
+      } else {
+          showInputError($(this));
+      }
     }
   });
 
   $('#shoeshine-price input').keypress(function(e) {
-    // If key pressed is enter key
+    // Check that there are only numbers, periods and commas
+    var isValid = /^[0-9,.]*$/.test(this.value)
+    // If key pressed is enter key, isValid and is more than 0
     if (e.which == 13) {
-      intendedPurchasePrice = this.value;
-      $('.choice-continue .choice-button').text('Buy a ' + intendedPurchase);
-      switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
+      if (isValid && parseInt(this.value) > 0) {
+        intendedPurchasePrice = this.value;
+        $('.choice-continue .choice-button').text('Buy a ' + intendedPurchase);
+        switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
+      } else {
+        showInputError($(this));
+      }
     }
   });
 
