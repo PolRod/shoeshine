@@ -36,7 +36,7 @@ $(document).ready(function(){
   // Going from hello page to price page
   $('#shoeshine-hello input').keypress(function(e) {
     // If key pressed is enter key
-    if (e.which == 13) {
+    if (e.which == 13 && this.value.length > 0) {
       intendedPurchase = this.value;
       switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
     }
