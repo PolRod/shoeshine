@@ -29,12 +29,31 @@ function switchActiveSlide(deActivateElement, activateElement){
 }
 
 $(document).ready(function(){
+  var intendedPurchase = "";
+  var intendedPurchasePrice = "";
+  $('body').addClass('shoeshine-stop');
   $('.shoeshine-active input').focus();
   // Going from hello page to price page
-  $('.shoeshine-active input').keypress(function(e) {
+  $('#shoeshine-hello input').keypress(function(e) {
     // If key pressed is enter key
     if (e.which == 13) {
+      intendedPurchase = this.value;
       switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
     }
+  });
+
+  $('#shoeshine-price input').keypress(function(e) {
+    // If key pressed is enter key
+    if (e.which == 13) {
+      intendedPurchasePrice = this.value;
+      $('.choice-continue .choice-button').text('Buy a ' + intendedPurchase);
+      switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
+    }
+  });
+
+  // Remove shoeshine experience and allow scrolling if person chooses to buy
+  $('.choice-continue a').click(function(){
+    $('body').removeClass('shoeshine-stop');
+    $('#shoeshine-main').remove();
   });
 });

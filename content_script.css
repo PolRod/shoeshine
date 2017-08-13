@@ -1,4 +1,4 @@
-body {
+body.shoeshine-stop {
   overflow: hidden;
 }
 
@@ -11,6 +11,10 @@ body {
   top:        0;
   left:       0;
   position:   fixed;
+}
+
+#shoeshine-main {
+  color: #FFF;
 }
 
 #shoeshine-slideshow {
@@ -36,11 +40,40 @@ body {
   align-items: center;
   font-weight: bold;
   line-height: 100%;
-  color: #FFF;
 }
 
 #shoeshine-main input {
   height: 1.3em;
+}
+
+.choice-table {
+  display: flex;           display: -webkit-flex;
+  flex-direction: row;     -webkit-flex-direction: row;
+  flex-grow: 0;            -webkit-flex-grow: 0;
+  flex-wrap: wrap;         -webkit-flex-wrap: wrap;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.choice-table .choice-cell {
+  width: 33.3%;
+  text-align: center;
+}
+
+.choice-button {
+  min-width: 30%;
+  max-width: 90%;
+  margin: 0 auto;
+  background: #4E9CAF;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 100%;
+}
+
+.choice-cell a, .choice-cell a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .shoeshine-active {
