@@ -36,6 +36,14 @@ function showInputError($input) {
   }, 1000);
 }
 
+function continueButtonCopy(intendedPurchase) {
+  return 'Buy' + ' ' + articleFor(intendedPurchase) + ' ' + intendedPurchase;
+}
+
+function articleFor(word) {
+  return ['a', 'e', 'i', 'o', 'u'].includes(word.charAt(0)) ? 'an ' : 'a '
+}
+
 $(document).ready(function(){
   var intendedPurchase = "";
   var intendedPurchasePrice = "";
@@ -61,7 +69,7 @@ $(document).ready(function(){
     if (e.which == 13) {
       if (isValid && parseInt(this.value) > 0) {
         intendedPurchasePrice = this.value;
-        $('.choice-continue .choice-button').text('Buy a ' + intendedPurchase);
+        $('.choice-continue .choice-button').text(continueButtonCopy(intendedPurchase));
         switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
       } else {
         showInputError($(this));
