@@ -43,8 +43,10 @@ $(document).ready(function(){
   });
 
   $('#shoeshine-price input').keypress(function(e) {
-    // If key pressed is enter key
-    if (e.which == 13) {
+    // Check that there are only numbers, periods and commas
+    var isValid = /^[0-9,.]*$/.test(this.value)
+    // If key pressed is enter key, isValid and is more than 0
+    if (e.which == 13 && isValid && parseInt(this.value) > 0) {
       intendedPurchasePrice = this.value;
       $('.choice-continue .choice-button').text('Buy a ' + intendedPurchase);
       switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
