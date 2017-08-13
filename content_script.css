@@ -52,18 +52,28 @@ body {
   flex-grow: 0;            -webkit-flex-grow: 0;
   flex-wrap: wrap;         -webkit-flex-wrap: wrap;
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.choice-table .choice-option {
-  width: 50%;
-}
-
-.choice-table .choice-option .choice-button {
-  width: 30%;
-  margin: 0 auto;
+.choice-table .choice-cell {
+  width: 33.3%;
   text-align: center;
+}
+
+.choice-button {
+  min-width: 30%;
+  max-width: 90%;
+  margin: 0 auto;
+  background: #4E9CAF;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 100%;
+}
+
+.choice-cell a, .choice-cell a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .shoeshine-active {
