@@ -45,6 +45,7 @@ body.shoeshine-stop {
 #shoeshine-main p.error {
   font-size: 14px;
   color: red;
+  display: none;
 }
 
 #shoeshine-main input {
