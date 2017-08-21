@@ -56,6 +56,16 @@ function articleFor(word) {
   return ['a', 'e', 'i', 'o', 'u'].includes(word.charAt(0)) ? 'an ' : 'a '
 }
 
+function changeContinueButtonCopy(copy) {
+  $('.choice-continue .choice-button').text(continueButtonCopy(copy));
+}
+
+function changeDonateButtonCopy(price) {
+  $('.choice-donate .choice-button').text(costs.oxfam["5"]);
+}
+
+
+// Doing the things
 $(document).ready(function(){
   var intendedPurchase = "";
   var intendedPurchasePrice = "";
@@ -81,7 +91,8 @@ $(document).ready(function(){
     if (e.which == 13) {
       if (isValid && parseInt(this.value) > 0) {
         intendedPurchasePrice = this.value;
-        $('.choice-continue .choice-button').text(continueButtonCopy(intendedPurchase));
+        changeContinueButtonCopy(intendedPurchase);
+        changeDonateButtonCopy(intendedPurchasePrice);
         switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
       } else {
         showInputError($(this));
