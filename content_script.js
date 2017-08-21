@@ -60,6 +60,20 @@ function changeContinueButtonCopy(copy) {
   $('.choice-continue .choice-button').text(continueButtonCopy(copy));
 }
 
+function pluralize(text) {
+  text.split(" ").map(function(e){
+    if (e.indexOf('$') > -1) {
+      if (e.match(/\$/g).length == 1) {
+        return e.replace("$", "s");
+      } else {
+        return e.split("$")[2];
+      }
+    } else {
+      return e;
+    }
+  });
+}
+
 function changeDonateButtonCopy(price) {
   var charityKeys = Object.keys(costs);
   var charity = charityKeys[Math.floor(Math.random()*charityKeys.length)];
@@ -74,10 +88,12 @@ function changeDonateButtonCopy(price) {
     $('.choice-donate .choice-button').text(costs[charity]["no_match"]);
   } else {
     // The highest value that price can be divided by
-    amount = amountsList[i];
+    var amount = amountsList[i];
     // The highest amount multiplier before reaching price
-    quantity = Math.floor(price/amount);
-    $('.choice-donate .choice-button').text(costs[charity]["amounts"][amount]);
+    var quantity = Math.floor(price/amount);
+    var text = costs[charity]["amounts"][amount].replace("%quantity%", quantity);
+    pluralize(text);
+    $('.choice-donate .choice-button').text(text);
   }
 }
 

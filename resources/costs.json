@@ -2,20 +2,26 @@
   "oxfam":
     {
         "no_match": "Help save children's lives",
-        "5": "buy a vaccine",
-        "10": "buy one mosquito net",
-        "20": "get a goat for a poor family in Uganda",
-        "50": "allow a farmer not to cut down their trees",
-        "100": "build one school"
+        "amounts":
+        {
+          "5": "Buy %quantity% vaccine$",
+          "10": "Buy %quantity% mosquito net$",
+          "20": "Get %quantity% goat$ for a poor family in Uganda",
+          "50": "Allow %quantity% farmer$ not to cut down their trees",
+          "100": "Build %quantity% school$"
+        }
     },
 
   "tree_hughers_international":
     {
-        "no_match": "Help save animals lives",
-        "5": "save one mouse",
-        "10": "save one puma",
-        "20": "save one rhino",
-        "50": "save one elephant",
-        "100": "save one whale"
+        "no_match": "Help save animals' lives",
+        "amounts":
+        {
+          "5": "Save %quantity% mouse$mice$",
+          "10": "Save %quantity% wolf$wolves$",
+          "20": "Save %quantity% rhino$",
+          "50": "Save %quantity% elephant$",
+          "100": "Save %quantity% whale$"
+        }
     }
 }
