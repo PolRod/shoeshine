@@ -1,0 +1,21 @@
+{
+  "oxfam":
+    {
+        "no_match": "Help save children's lives",
+        "5": "buy a vaccine",
+        "10": "buy one mosquito net",
+        "20": "get a goat for a poor family in Uganda",
+        "50": "allow a farmer not to cut down their trees",
+        "100": "build one school"
+    },
+
+  "tree_hughers_international":
+    {
+        "no_match": "Help save animals lives",
+        "5": "save one mouse",
+        "10": "save one puma",
+        "20": "save one rhino",
+        "50": "save one elephant",
+        "100": "save one whale"
+    }
+}
