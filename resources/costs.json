@@ -17,8 +17,8 @@
         "no_match": "Help save animals' lives",
         "amounts":
         {
-          "5": "Save %quantity% mouse$mice$",
-          "10": "Save %quantity% wolf$wolves$",
+          "5": "Save %quantity% mouse$mice",
+          "10": "Save %quantity% wolf$wolves",
           "20": "Save %quantity% rhino$",
           "50": "Save %quantity% elephant$",
           "100": "Save %quantity% whale$"
