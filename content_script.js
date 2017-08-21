@@ -61,9 +61,25 @@ function changeContinueButtonCopy(copy) {
 }
 
 function changeDonateButtonCopy(price) {
-  $('.choice-donate .choice-button').text(costs.oxfam["5"]);
+  var charityKeys = Object.keys(costs);
+  var charity = charityKeys[Math.floor(Math.random()*charityKeys.length)];
+  var amountsList = Object.keys(costs[charity]["amounts"]);
+  var i = amountsList.length - 1;
+  while (i >= 0 && price/amountsList[i] < 1) {
+    i--
+  }
+  if (i < 0) {
+    //No items in the array matched. Ideally we would choose next charity but for
+    // now let's show the generic string
+    $('.choice-donate .choice-button').text(costs[charity]["no_match"]);
+  } else {
+    // The highest value that price can be divided by
+    amount = amountsList[i];
+    // The highest amount multiplier before reaching price
+    quantity = Math.floor(price/amount);
+    $('.choice-donate .choice-button').text(costs[charity]["amounts"][amount]);
+  }
 }
-
 
 // Doing the things
 $(document).ready(function(){
