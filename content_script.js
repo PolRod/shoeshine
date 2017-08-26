@@ -60,18 +60,19 @@ function changeContinueButtonCopy(copy) {
   $('.choice-continue .choice-button').text(continueButtonCopy(copy));
 }
 
-function pluralize(text) {
-  text.split(" ").map(function(e){
-    if (e.indexOf('$') > -1) {
-      if (e.match(/\$/g).length == 1) {
-        return e.replace("$", "s");
+function pluralize(text, quantity) {
+  return text.split(" ").map(function(e){
+    pluralizerIndex = e.indexOf('$');
+    if (pluralizerIndex > -1) {
+      if (pluralizerIndex == e.length -1) {
+        return quantity > 1 ? e.replace("$", "s") : e.slice(0, -1);
       } else {
-        return e.split("$")[2];
+        return quantity > 1 ? e.split("$")[1] : e.split("$")[0];
       }
     } else {
       return e;
     }
-  });
+  }).join(" ");
 }
 
 function changeDonateButtonCopy(price) {
@@ -92,7 +93,7 @@ function changeDonateButtonCopy(price) {
     // The highest amount multiplier before reaching price
     var quantity = Math.floor(price/amount);
     var text = costs[charity]["amounts"][amount].replace("%quantity%", quantity);
-    pluralize(text);
+    text = pluralize(text, quantity);
     $('.choice-donate .choice-button').text(text);
   }
 }
