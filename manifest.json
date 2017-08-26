@@ -20,5 +20,9 @@
       "css": ["content_script.css"],
       "js": ["jquery-3.2.1.min.js", "content_script.js"]
     }
+  ],
+
+  "web_accessible_resources": [
+    "resources/costs.json"
   ]
 }

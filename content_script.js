@@ -1,3 +1,15 @@
+//get info in costs.json
+var costs = {};
+var costsUrl = chrome.runtime.getURL("resources/costs.json");
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       costs = JSON.parse(xhttp.responseText);
+    }
+};
+xhttp.open("GET", costsUrl, true);
+xhttp.send();
+
 // The actual html is in a background page. Here we ask for the html to that page.
 // We also make some CSS adjustments that were not effective if executed
 // through content_script.css.
@@ -44,6 +56,49 @@ function articleFor(word) {
   return ['a', 'e', 'i', 'o', 'u'].includes(word.charAt(0)) ? 'an ' : 'a '
 }
 
+function changeContinueButtonCopy(copy) {
+  $('.choice-continue .choice-button').text(continueButtonCopy(copy));
+}
+
+function pluralize(text, quantity) {
+  return text.split(" ").map(function(e){
+    pluralizerIndex = e.indexOf('$');
+    if (pluralizerIndex > -1) {
+      if (pluralizerIndex == e.length -1) {
+        return quantity > 1 ? e.replace("$", "s") : e.slice(0, -1);
+      } else {
+        return quantity > 1 ? e.split("$")[1] : e.split("$")[0];
+      }
+    } else {
+      return e;
+    }
+  }).join(" ");
+}
+
+function changeDonateButtonCopy(price) {
+  var charityKeys = Object.keys(costs);
+  var charity = charityKeys[Math.floor(Math.random()*charityKeys.length)];
+  var amountsList = Object.keys(costs[charity]["amounts"]);
+  var i = amountsList.length - 1;
+  while (i >= 0 && price/amountsList[i] < 1) {
+    i--
+  }
+  if (i < 0) {
+    //No items in the array matched. Ideally we would choose next charity but for
+    // now let's show the generic string
+    $('.choice-donate .choice-button').text(costs[charity]["no_match"]);
+  } else {
+    // The highest value that price can be divided by
+    var amount = amountsList[i];
+    // The highest amount multiplier before reaching price
+    var quantity = Math.floor(price/amount);
+    var text = costs[charity]["amounts"][amount].replace("%quantity%", quantity);
+    text = pluralize(text, quantity);
+    $('.choice-donate .choice-button').text(text);
+  }
+}
+
+// Doing the things
 $(document).ready(function(){
   var intendedPurchase = "";
   var intendedPurchasePrice = "";
@@ -69,7 +124,8 @@ $(document).ready(function(){
     if (e.which == 13) {
       if (isValid && parseInt(this.value) > 0) {
         intendedPurchasePrice = this.value;
-        $('.choice-continue .choice-button').text(continueButtonCopy(intendedPurchase));
+        changeContinueButtonCopy(intendedPurchase);
+        changeDonateButtonCopy(intendedPurchasePrice);
         switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
       } else {
         showInputError($(this));
