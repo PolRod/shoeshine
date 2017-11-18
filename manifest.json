@@ -16,9 +16,48 @@
 
   "content_scripts": [
     {
-      "matches": ["*://www.amazon.com/*"],
+      "matches": [
+        "*://www.alibaba.com/*",
+        "*://www.amazon.com/*",
+        "*://www.amazon.uk/*",
+        "*://www.amazon.es/*",
+        "*://www.apple.com/*",
+        "*://www.bestbuy.com/*",
+        "*://www.costco.com/*",
+        "*://www.ebay.com/*",
+        "*://www.etsy.com/*",
+        "*://www.gap.com/*",
+        "*://www.groupon.com/*",
+        "*://www.homedepot.com/*",
+        "*://www.hsn.com/*",
+        "*://www.kohls.com/*",
+        "*://www.lowes.com/*",
+        "*://www.macys.com/*",
+        "*://www.neimanmarcus.com/*",
+        "*://www.nike.com/*",
+        "*://www.nordstrom.com/*",
+        "*://www.overstock.com/*",
+        "*://www.qvc.com/*",
+        "*://www.sears.com/*",
+        "*://store.steampowered.com/*",
+        "*://www.target.com/*",
+        "*://www.thinkgeek.com/*",
+        "*://www.urbanoutfitters.com/*",
+        "*://www.victoriassecret.com/*",
+        "*://www.wayfair.com/*",
+        "*://www.walgreens.com/*",
+        "*://www.walmart.com/*",
+        "*://www.williams-sonoma.com/*"
+      ],
       "css": ["content_script.css"],
-      "js": ["jquery-3.2.1.min.js", "content_script.js"]
+      "js": [
+        "js/libraries/jquery-3.2.1.min.js",
+        "js/initializers.js",
+        "js/slide_transitions.js",
+        "js/pluralize.js",
+        "js/choice_buttons.js",
+        "js/content_script.js"
+      ]
     }
   ],
 
