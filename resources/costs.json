@@ -1,10 +1,10 @@
 {
   "oxfam":
     {
-        "no_match": "Help those in need",
-        "amounts":
+      "no_match": "Help those in need",
+      "amounts":
         {
-          "5": "Buy %quantity% vaccine$",
+          "5": "Buy %quant% vaccine$",
           "12": [
             {
               "text": "Give a pack of seeds to %quant% farmer$",
@@ -19,37 +19,37 @@
           ],
           "20": [
             {
-              "text": "Get %quantity% hundred$ bars of soap to stop diseases to spread",
+              "text": "Get %quant% hundred$ bars of soap to stop diseases to spread",
               "url": "https://www.oxfamgifts.com/gifts/soap/"
             },
             {
-              "text": "Increase %quantity% woman$women famer harvest",
+              "text": "Increase %quant% woman$women famer harvest",
               "url": "https://www.oxfamgifts.com/gifts/rice-dragon/"
             }
           ],
           "25": [
             {
-              "text": "Help feed %quantity% family$families in need",
+              "text": "Help feed %quant% family$families in need",
               "url": "https://www.oxfamgifts.com/gifts/feed-a-family/"
             },
             {
-              "text": "Protect %quantity% family$families with mosquito nets",
+              "text": "Protect %quant% family$families with mosquito nets",
               "url": "https://www.oxfamgifts.com/gifts/mosquito-nets/"
             }
           ],
           "35": [
             {
-              "text": "Get %q% family$families a medical kit",
+              "text": "Get %quant% family$families a medical kit",
               "url": "https://www.oxfamgifts.com/gifts/medical-kit/"
             },
             {
-              "text": "Get %q% water purifier$ for people without access to clean water",
+              "text": "Get %quant% water purifier$ for people without access to clean water",
               "url": "https://www.oxfamgifts.com/gifts/water-purifier/"
             }
           ],
           "40": [
             {
-              "text": "Help %quantity% family$families recover from disaster with an emergency kit",
+              "text": "Help %quant% family$families recover from disaster with an emergency kit",
               "url": "https://www.oxfamgifts.com/gifts/emergency-kit/"
             }
           ],
@@ -67,7 +67,7 @@
           ],
           "100": [
             {
-              "text": "Help train %quant% students to make a difference in the fight against poverty",
+              "text": "Help train %quant% student$ to make a difference in the fight against poverty",
               "url": "https://www.oxfamgifts.com/gifts/help-a-student-leader-make-a-difference/"
             }
           ],
@@ -89,19 +89,6 @@
               "url": "https://www.oxfamgifts.com/gifts/safe-drinking-water-1000-people/"
             }
           ],
-        }
-    },
-
-  "tree_hughers_international":
-    {
-        "no_match": "Help save animals' lives",
-        "amounts":
-        {
-          "5": "Save %quantity% mouse$mice",
-          "10": "Save %quantity% wolf$wolves",
-          "20": "Save %quantity% rhino$",
-          "50": "Save %quantity% elephant$",
-          "100": "Save %quantity% whale$"
         }
     }
 }
