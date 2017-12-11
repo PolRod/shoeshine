@@ -73,7 +73,7 @@
           ],
           "135": [
             {
-              "text": "Get %quant% water pump for a communities with difficult access to water",
+              "text": "Get %quant% water pump$ for a community with difficult access to water",
               "url": "https://www.oxfamgifts.com/gifts/water-pump/"
             }
           ],
@@ -88,7 +88,7 @@
               "text": "Give safe drinking water to %quant%1000 people",
               "url": "https://www.oxfamgifts.com/gifts/safe-drinking-water-1000-people/"
             }
-          ],
+          ]
         }
     }
 }
