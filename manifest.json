@@ -53,6 +53,7 @@
       "js": [
         "js/libraries/jquery-3.2.1.min.js",
         "js/initializers.js",
+        "js/helpers.js",
         "js/slide_transitions.js",
         "js/pluralize.js",
         "js/choice_buttons.js",

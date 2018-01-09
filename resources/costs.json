@@ -1,27 +1,94 @@
 {
   "oxfam":
     {
-        "no_match": "Help save children's lives",
-        "amounts":
+      "no_match": "Help those in need",
+      "amounts":
         {
-          "5": "Buy %quantity% vaccine$",
-          "10": "Buy %quantity% mosquito net$",
-          "20": "Get %quantity% goat$ for a poor family in Uganda",
-          "50": "Allow %quantity% farmer$ not to cut down their trees",
-          "100": "Build %quantity% school$"
-        }
-    },
-
-  "tree_hughers_international":
-    {
-        "no_match": "Help save animals' lives",
-        "amounts":
-        {
-          "5": "Save %quantity% mouse$mice",
-          "10": "Save %quantity% wolf$wolves",
-          "20": "Save %quantity% rhino$",
-          "50": "Save %quantity% elephant$",
-          "100": "Save %quantity% whale$"
+          "5": "Buy %quant% vaccine$",
+          "12": [
+            {
+              "text": "Give a pack of seeds to %quant% farmer$",
+              "url": "https://www.oxfamgifts.com/gifts/pack-of-seeds/"
+            }
+          ],
+          "18": [
+            {
+              "text": "Provide %quant%3 family%families with water jugs",
+              "url": "https://www.oxfamgifts.com/gifts/water-jugs/"
+            }
+          ],
+          "20": [
+            {
+              "text": "Get %quant% hundred$ bars of soap to stop diseases to spread",
+              "url": "https://www.oxfamgifts.com/gifts/soap/"
+            },
+            {
+              "text": "Increase %quant% woman$women famer harvest",
+              "url": "https://www.oxfamgifts.com/gifts/rice-dragon/"
+            }
+          ],
+          "25": [
+            {
+              "text": "Help feed %quant% family$families in need",
+              "url": "https://www.oxfamgifts.com/gifts/feed-a-family/"
+            },
+            {
+              "text": "Protect %quant% family$families with mosquito nets",
+              "url": "https://www.oxfamgifts.com/gifts/mosquito-nets/"
+            }
+          ],
+          "35": [
+            {
+              "text": "Get %quant% family$families a medical kit",
+              "url": "https://www.oxfamgifts.com/gifts/medical-kit/"
+            },
+            {
+              "text": "Get %quant% water purifier$ for people without access to clean water",
+              "url": "https://www.oxfamgifts.com/gifts/water-purifier/"
+            }
+          ],
+          "40": [
+            {
+              "text": "Help %quant% family$families recover from disaster with an emergency kit",
+              "url": "https://www.oxfamgifts.com/gifts/emergency-kit/"
+            }
+          ],
+          "45": [
+            {
+              "text": "Plant %quant%100 trees",
+              "url": "https://www.oxfamgifts.com/gifts/plant-100-trees/"
+            }
+          ],
+          "90": [
+            {
+              "text": "Train %quant%10 people from an underserved country in human rights",
+              "url": "https://www.oxfamgifts.com/gifts/human-rights-training/"
+            }
+          ],
+          "100": [
+            {
+              "text": "Help train %quant% student$ to make a difference in the fight against poverty",
+              "url": "https://www.oxfamgifts.com/gifts/help-a-student-leader-make-a-difference/"
+            }
+          ],
+          "135": [
+            {
+              "text": "Get %quant% water pump$ for a community with difficult access to water",
+              "url": "https://www.oxfamgifts.com/gifts/water-pump/"
+            }
+          ],
+          "500": [
+            {
+              "text": "Plant %quant%1000 trees",
+              "url": "https://www.oxfamgifts.com/gifts/plant-a-forest/"
+            }
+          ],
+          "3000": [
+            {
+              "text": "Give safe drinking water to %quant%1000 people",
+              "url": "https://www.oxfamgifts.com/gifts/safe-drinking-water-1000-people/"
+            }
+          ]
         }
     }
 }

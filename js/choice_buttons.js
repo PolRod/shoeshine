@@ -27,7 +27,7 @@ function changeDonateButtonCopy(price) {
     var amount = amountsList[i];
     // The highest amount multiplier before reaching price
     var quantity = Math.floor(price/amount);
-    var text = costs[charity]["amounts"][amount].replace("%quantity%", quantity);
+    var text = costs[charity]["amounts"][amount].randomElement()["text"];
     text = pluralize(text, quantity);
     $('.choice-donate .choice-button').text(text);
   }
