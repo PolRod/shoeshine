@@ -6,6 +6,7 @@
   "version": "0.1",
 
   "permissions": [
+    "storage",
     "activeTab",
     "https://ajax.googleapis.com/"
   ],
@@ -57,6 +58,7 @@
         "js/slide_transitions.js",
         "js/pluralize.js",
         "js/choice_buttons.js",
+        "js/main_shoeshine_behavior.js",
         "js/content_script.js"
       ]
     }

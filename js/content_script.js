@@ -1,42 +1,41 @@
-// Doing the things
+// Make some CSS adjustments that were not effective if executed
+// through content_script.css.
+function setShoeshineZIndex(){
+  $('#shoeshine-overlay').css('z-index', 1000);
+  $('#shoeshine-slideshow').css('z-index', 1001);
+}
+
+// The actual html is in a background page. Here we ask for the html to that page.
+function showShoeshineAndSetTime() {
+  chrome.runtime.sendMessage({html: "initial"}, function(response) {
+    var html = response.html;
+    $('body').prepend(html);
+    $('body').addClass('shoeshine-stop');
+    setShoeshineZIndex();
+    mainShoeshineBehavior();
+    chrome.storage.local.set({ "lastShoeshineDisplay":  Date.now()})
+  });
+}
+
+// Check if last time Shoeshine was displayed was more than 12 hours ago.
+// If it was, show it, otherwise, do not show it.
+function checkShoeshineEligibilityAndShow() {
+  chrome.storage.local.get("lastShoeshineDisplay", function(result){
+    lastDisplay = result.lastShoeshineDisplay;
+    if (lastDisplay) {
+      // 12 hours
+      periodBeforeDisplayAgain = 12 * 3600 * 1000;
+      timeToDisplayAgain = lastDisplay + periodBeforeDisplayAgain;
+      if (timeToDisplayAgain < Date.now()) {
+        showShoeshineAndSetTime();
+      }
+    } else {
+      showShoeshineAndSetTime();
+    }
+  });
+}
+
+//Start the whole thing
 $(document).ready(function(){
-  var intendedPurchase = "";
-  var intendedPurchasePrice = "";
-  $('body').addClass('shoeshine-stop');
-  $('.shoeshine-active input').focus();
-  // Going from hello page to price page
-  $('#shoeshine-hello input').keypress(function(e) {
-    // If key pressed is enter key
-    if (e.which == 13) {
-      if (this.value.length > 0) {
-        intendedPurchase = this.value;
-        switchActiveSlide($('#shoeshine-hello'), $('#shoeshine-price'));
-      } else {
-          showInputError($(this));
-      }
-    }
-  });
-
-  // When pressing enter on the price input
-  $('#shoeshine-price input').keypress(function(e) {
-    // Check that there are only numbers, periods and commas
-    var isValid = /^[0-9,.]*$/.test(this.value)
-    // If key pressed is enter key, isValid and is more than 0
-    if (e.which == 13) {
-      if (isValid && parseInt(this.value) > 0) {
-        intendedPurchasePrice = this.value;
-        changeContinueButtonCopy(intendedPurchase);
-        changeDonateButtonCopy(intendedPurchasePrice);
-        switchActiveSlide($('#shoeshine-price'), $('#shoeshine-choice'));
-      } else {
-        showInputError($(this));
-      }
-    }
-  });
-
-  // Remove shoeshine experience and allow scrolling if person chooses to buy
-  $('.choice-continue a').click(function(){
-    $('body').removeClass('shoeshine-stop');
-    $('#shoeshine-main').remove();
-  });
+  checkShoeshineEligibilityAndShow();
 });
