@@ -24,7 +24,7 @@ function checkShoeshineEligibilityAndShow() {
     lastDisplay = result.lastShoeshineDisplay;
     if (lastDisplay) {
       // 12 hours
-      periodBeforeDisplayAgain = 12 * 3600 * 1000
+      periodBeforeDisplayAgain = 12 * 3600 * 1000;
       timeToDisplayAgain = lastDisplay + periodBeforeDisplayAgain;
       if (timeToDisplayAgain < Date.now()) {
         showShoeshineAndSetTime();
