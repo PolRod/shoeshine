@@ -58,6 +58,7 @@
         "js/slide_transitions.js",
         "js/pluralize.js",
         "js/choice_buttons.js",
+        "js/main_shoeshine_behavior.js",
         "js/content_script.js"
       ]
     }
