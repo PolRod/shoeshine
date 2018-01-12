@@ -23,8 +23,10 @@ function checkShoeshineEligibilityAndShow() {
   chrome.storage.local.get("lastShoeshineDisplay", function(result){
     lastDisplay = result.lastShoeshineDisplay;
     if (lastDisplay) {
-      twelveHoursLater = lastDisplay + 12 * 3600 * 1000;
-      if (twelveHoursLater < Date.now()) {
+      // 12 hours
+      periodBeforeDisplayAgain = 12 * 3600 * 1000
+      timeToDisplayAgain = lastDisplay + periodBeforeDisplayAgain;
+      if (timeToDisplayAgain < Date.now()) {
         showShoeshineAndSetTime();
       }
     } else {
